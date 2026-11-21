@@ -12,7 +12,7 @@ same input and output names, shapes and types, standard ONNX ops, tested with ON
 | `mobile_sam/mobile_sam_encoder_int8w.onnx` | MobileSAM image encoder | 28.2 MB | 8.4 MB | `64ede3fbdfc1011cf7463ce6911c5b9de8e8e16c0df8af0d449b61b58a2c976a` |
 | `mobile_sam/mobile_sam_decoder_int8w.onnx` | MobileSAM prompt decoder | 16.5 MB | 4.9 MB | `13a8e755cd3a0394d2f5a4d5c6c7943fc809ac233e189de70761dbc67359ffbc` |
 
-Use the two MobileSAM files together (the encoder was validated with the int8 decoder).
+Use the two MobileSAM files together (the encoder was validated with the int8 decoder). `mobile_sam/mobile_sam_int8w.zip` holds both (stored, not compressed) as `mobile_sam_encoder.onnx` and `mobile_sam_decoder.onnx`, for apps that download one file per pack.
 
 ## Sources (originals)
 
