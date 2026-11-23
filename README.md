@@ -73,3 +73,19 @@ Download (release `stickers-2026.11.23`): `face_stickers.zip`, SHA-256 `6287b361
 
 Rebuild: `python stickers/src/make_stickers.py stickers/pack` (Python 3.12, Pillow).
 
+
+## Beat tracking (`beat/`)
+
+`beat/beat_this_small0_int8w.onnx` (3.5 MB, SHA-256 `30816a35c7bde6b43186d492a150d03677262e4b96c3381c0629e2a510b32e9d`, 3 549 603 bytes): **Beat This!** `small0` (Foscarin, Schlüter & Widmer, "Beat this! Accurate beat tracking without DBN postprocessing", ISMIR 2024, CP JKU Linz) for the Lumen music slideshow.
+
+- **Source:** the official `small0` checkpoint (`small0.ckpt`, SHA-256 `6074be2c4d490c5f6101fcc374a1ec72ae93456e23bb6019783b849f5dc7d47b`) from github.com/CPJKU/beat_this.
+- **Export:** ONNX opset 17 by `beat/src/convert.py`. Input `spect` float32 [1, frames, 128] (log-mel, 22 050 Hz, hop 441, 50 frames/s); outputs `beat` and `downbeat` logits [1, frames]. The fp32 export is within 4.7e-5 logits of PyTorch.
+- **Int8:** weight-only, per output channel (`scripts/quantize.py`), 10.5 MB → 3.5 MB; all arithmetic stays fp32.
+- **Quality vs the fp32 model** (pass threshold set before measuring: beats and downbeats within ±20 ms with F-measure ≥ 0.98, same BPM, on every piece):
+  - 10 one-minute excerpts of real (orchestral / cinematic) music: beats F ≥ 0.983 on every excerpt; same BPM on 9 of 10 (one excerpt with an ambiguous pulse: 176 vs 167); downbeats identical on 8 of 10, one downbeat differs on each of the other two (F 0.977).
+  - 7 synthetic pieces (`beat/src/quant_eval.py`): beats F ≥ 0.981; downbeats below 0.98 on 2 pieces the fp32 model itself mis-tracks. Against the true beats of those pieces int8 scores the same as fp32 (within 0.01).
+  - The strict threshold is not met (single downbeats on 2 excerpts). It was accepted because beat timing, which drives the slideshow cuts, matches. In Lumen on an Android emulator, a 120 BPM test export is identical to the fp32 one.
+- **Licence:** MIT (code and checkpoints, https://github.com/CPJKU/beat_this/blob/main/LICENSE). Changes: ONNX export and int8 weight re-encoding, no retraining. Scripts in `beat/src/`: MIT.
+- **Reproduce:** `beat/src/convert.py` (export), `beat/src/quant_eval.py <scripts dir> wo` (quantize + synthetic gate), `beat/src/real_eval.py <scripts dir> <folder of mp3>` (real-music gate). Python 3.12 with `torch`, `torchaudio`, `onnx`, `onnxruntime==1.32.0`, `numpy`, `pillow`, `av`, and `beat-this` from github.com/CPJKU/beat_this.
+
+Download (release `beat-2026.11.23`): `beat_this_small0_int8w.onnx`.
