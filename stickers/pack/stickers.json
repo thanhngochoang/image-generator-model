@@ -1,0 +1,238 @@
+{
+ "version": 1,
+ "license": "CC0-1.0, original art made for Lumen",
+ "stickers": [
+  {
+   "id": "cat",
+   "name": {
+    "vi": "Tai mèo",
+    "en": "Cat"
+   },
+   "thumb": "cat_ears.png",
+   "parts": [
+    {
+     "file": "cat_ears.png",
+     "anchor": "forehead",
+     "width": 1.3,
+     "dx": 0,
+     "dy": -0.34
+    },
+    {
+     "file": "cat_nose.png",
+     "anchor": "nose",
+     "width": 0.7,
+     "dx": 0,
+     "dy": 0.04
+    }
+   ]
+  },
+  {
+   "id": "bunny",
+   "name": {
+    "vi": "Tai thỏ",
+    "en": "Bunny"
+   },
+   "thumb": "bunny_ears.png",
+   "parts": [
+    {
+     "file": "bunny_ears.png",
+     "anchor": "forehead",
+     "width": 0.95,
+     "dx": 0,
+     "dy": -0.55
+    }
+   ]
+  },
+  {
+   "id": "crown",
+   "name": {
+    "vi": "Vương miện",
+    "en": "Crown"
+   },
+   "thumb": "crown.png",
+   "parts": [
+    {
+     "file": "crown.png",
+     "anchor": "forehead",
+     "width": 0.85,
+     "dx": 0,
+     "dy": -0.32
+    }
+   ]
+  },
+  {
+   "id": "hearts",
+   "name": {
+    "vi": "Kính tim",
+    "en": "Heart glasses"
+   },
+   "thumb": "heart_glasses.png",
+   "parts": [
+    {
+     "file": "heart_glasses.png",
+     "anchor": "eyes",
+     "width": 1.1,
+     "dx": 0,
+     "dy": 0.02
+    }
+   ]
+  },
+  {
+   "id": "shades",
+   "name": {
+    "vi": "Kính râm",
+    "en": "Sunglasses"
+   },
+   "thumb": "sunglasses.png",
+   "parts": [
+    {
+     "file": "sunglasses.png",
+     "anchor": "eyes",
+     "width": 1.05,
+     "dx": 0,
+     "dy": 0.03
+    }
+   ]
+  },
+  {
+   "id": "blush",
+   "name": {
+    "vi": "Má hồng",
+    "en": "Blush"
+   },
+   "thumb": "blush.png",
+   "parts": [
+    {
+     "file": "blush.png",
+     "anchor": "cheek_left",
+     "width": 0.32,
+     "dx": 0,
+     "dy": 0
+    },
+    {
+     "file": "blush.png",
+     "anchor": "cheek_right",
+     "width": 0.32,
+     "dx": 0,
+     "dy": 0
+    }
+   ]
+  },
+  {
+   "id": "flowers",
+   "name": {
+    "vi": "Vòng hoa",
+    "en": "Flower crown"
+   },
+   "thumb": "flower_crown.png",
+   "parts": [
+    {
+     "file": "flower_crown.png",
+     "anchor": "forehead",
+     "width": 1.25,
+     "dx": 0,
+     "dy": -0.18
+    }
+   ]
+  },
+  {
+   "id": "mustache",
+   "name": {
+    "vi": "Ria mép",
+    "en": "Mustache"
+   },
+   "thumb": "mustache.png",
+   "parts": [
+    {
+     "file": "mustache.png",
+     "anchor": "mouth",
+     "width": 0.6,
+     "dx": 0,
+     "dy": -0.1
+    }
+   ]
+  },
+  {
+   "id": "party",
+   "name": {
+    "vi": "Mũ tiệc",
+    "en": "Party hat"
+   },
+   "thumb": "party_hat.png",
+   "parts": [
+    {
+     "file": "party_hat.png",
+     "anchor": "forehead",
+     "width": 0.7,
+     "dx": 0.12,
+     "dy": -0.72
+    }
+   ]
+  },
+  {
+   "id": "devil",
+   "name": {
+    "vi": "Sừng quỷ",
+    "en": "Devil horns"
+   },
+   "thumb": "devil_horns.png",
+   "parts": [
+    {
+     "file": "devil_horns.png",
+     "anchor": "forehead",
+     "width": 1.0,
+     "dx": 0,
+     "dy": -0.2
+    }
+   ]
+  },
+  {
+   "id": "halo",
+   "name": {
+    "vi": "Hào quang",
+    "en": "Halo"
+   },
+   "thumb": "halo.png",
+   "parts": [
+    {
+     "file": "halo.png",
+     "anchor": "forehead",
+     "width": 0.9,
+     "dx": 0,
+     "dy": -0.5
+    }
+   ]
+  },
+  {
+   "id": "puppy",
+   "name": {
+    "vi": "Cún con",
+    "en": "Puppy"
+   },
+   "thumb": "puppy_ears.png",
+   "parts": [
+    {
+     "file": "puppy_ears.png",
+     "anchor": "forehead",
+     "width": 1.5,
+     "dx": 0,
+     "dy": -0.16
+    },
+    {
+     "file": "puppy_nose.png",
+     "anchor": "nose",
+     "width": 0.3,
+     "dx": 0,
+     "dy": 0.0
+    },
+    {
+     "file": "puppy_tongue.png",
+     "anchor": "mouth",
+     "width": 0.16,
+     "dx": 0,
+     "dy": 0.12
+    }
+   ]
+  }
+ ]
+}

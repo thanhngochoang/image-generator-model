@@ -57,3 +57,19 @@ These files are derivatives of the originals and keep their licences.
 - The scripts in `scripts/`: Apache-2.0.
 
 Changes made: weights re-encoded as int8 with per-channel or per-block scales (and, for DDColor, up-cast from fp16 to fp32 before that). No retraining.
+
+## Face stickers (`stickers/`)
+
+Original face stickers for the Lumen camera, drawn by `stickers/src/make_stickers.py` (Pillow, no outside images). Released under **CC0-1.0**: free for any use, no attribution needed.
+
+| File | Contents |
+|---|---|
+| `stickers/pack/face_stickers.zip` | `stickers.json` + 15 PNG pictures (stored, not compressed) |
+| `stickers/pack/stickers.json` | 12 stickers: cat, bunny, crown, heart glasses, sunglasses, blush, flower crown, mustache, party hat, devil horns, halo, puppy |
+
+Each sticker lists its parts: a picture, the face **anchor** it sits on (`forehead`, `eyes`, `nose`, `mouth`, `chin`, `cheek_left`, `cheek_right`, from MediaPipe Face Landmarker points 10, 33/263, 1, 13/14, 152, 50, 280), its **width** in face widths (points 234 – 454) and an offset **dx / dy** in face widths along the face's own axes (dy < 0 = up). The app turns each part with the line between the outer eye corners.
+
+Download (release `stickers-2026.11.23`): `face_stickers.zip`, SHA-256 `6287b361962fbeb311226c745e336cf73161b8e845eb64bbfca416d431d4f030`, 388 343 bytes.
+
+Rebuild: `python stickers/src/make_stickers.py stickers/pack` (Python 3.12, Pillow).
+
