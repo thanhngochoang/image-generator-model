@@ -60,19 +60,20 @@ Changes made: weights re-encoded as int8 with per-channel or per-block scales (a
 
 ## Face stickers (`stickers/`)
 
-Original face stickers for the Lumen camera, drawn by `stickers/src/make_stickers.py` (Pillow, no outside images). Released under **CC0-1.0**: free for any use, no attribution needed.
+Face stickers for the Lumen camera, **cut from real photos** that are CC0 or public domain (Openverse search limited to
+`cc0,pdm`; each photo's title, author, source page and licence are in `stickers/pack/CREDITS.json` and
+`stickers/photos/src/credits.json`). The pack itself is released under **CC0-1.0**.
 
 | File | Contents |
 |---|---|
-| `stickers/pack/face_stickers.zip` | `stickers.json` + 15 PNG pictures (stored, not compressed) |
-| `stickers/pack/stickers.json` | 12 stickers: cat, bunny, crown, heart glasses, sunglasses, blush, flower crown, mustache, party hat, devil horns, halo, puppy |
+| `stickers/pack/face_stickers.zip` | `stickers.json` + 9 PNG pictures (stored, not compressed) |
+| `stickers/pack/stickers.json` | 7 stickers: cat (sphynx ears + kitten nose), bunny (rabbit ears), puppy (boxer ears + dog nose), tiara (crystal tiara), sunglasses (yellow), flower crown (real flowers set along an arc), blush |
 
 Each sticker lists its parts: a picture, the face **anchor** it sits on (`forehead`, `eyes`, `nose`, `mouth`, `chin`, `cheek_left`, `cheek_right`, from MediaPipe Face Landmarker points 10, 33/263, 1, 13/14, 152, 50, 280), its **width** in face widths (points 234 – 454) and an offset **dx / dy** in face widths along the face's own axes (dy < 0 = up). The app turns each part with the line between the outer eye corners.
 
-Download (release `stickers-2026.11.23`): `face_stickers.zip`, SHA-256 `6287b361962fbeb311226c745e336cf73161b8e845eb64bbfca416d431d4f030`, 388 343 bytes.
+Download (release `stickers-2026.11.25`): `face_stickers.zip`, SHA-256 `3ba09dbea2bed77280323bacd421a04f47fa0a4cc2bd998cf559f02d47e2f10a`, 3 226 454 bytes. (The earlier drawn pack, release `stickers-2026.11.23`, stays available for older app versions.)
 
-Rebuild: `python stickers/src/make_stickers.py stickers/pack` (Python 3.12, Pillow).
-
+Rebuild: `python stickers/photos/make_real_stickers.py stickers/photos/src <isnet-general-use.onnx> stickers/pack` (Python 3.12, `onnxruntime`, `numpy`, `pillow`). Cutouts use ISNet / DIS "general use" (Apache-2.0, the `isnet-general-use.onnx` file of the rembg project), run only to make the pictures; each part is limited by a hand-drawn region (an ear, a nose). `photos/preview.py` places every sticker on a face with the app's own maths for checking; `photos/search.py` and `photos/fetch.py` are the search and download used to pick the photos.
 
 ## Beat tracking (`beat/`)
 
